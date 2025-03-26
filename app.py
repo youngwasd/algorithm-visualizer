@@ -1,4 +1,3 @@
-# ignore front end for now
 # from flask import Flask
 # app = Flask(__name__)
 
@@ -9,17 +8,23 @@
 # if __name__ == '__main__':
 #     app.run()
 
-
-# work on back end/console version first
 class Selection:
     def selectionSort(self, arr: list[int]) -> list[int]:
-        # algorithm go here
+        index = 0
+        
+        for i in range(len(arr) - 1):
+            index = i # set index to curr val
+            for j in range(i + 1, len(arr)):
+                if (arr[j] < arr[index]): # new val < min?
+                    index = j # save index
+
+            arr[i], arr[index] = arr[index], arr[i] # a, b = b, a or swaps min with first
 
         return arr
 
 sol = Selection()
-res = sol.selectionSort([2, 5, 1, 10])
+res = sol.selectionSort([64, 25, 12, 22, 11])
 
-expected = [1, 2, 5, 10]
-print(expected == res)
-print(res, expected)
+expected = [11, 12, 22, 25, 64]
+print(f"PASS? {expected == res}")
+print(f"RESULT: {res}\nEXPECTED: {expected}")
