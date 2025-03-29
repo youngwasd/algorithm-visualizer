@@ -1,7 +1,0 @@
-Selection Sort Algorithm
-ex: [2, 5, 10, 1, 2, 50]
-
-1. for loop that scans the array that reads each index
-2. second loop that comapres the previous value with each next value
-3. create a temp value and swap with the current variable and temp
-4.
